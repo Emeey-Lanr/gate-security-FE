@@ -1,12 +1,8 @@
+import Router from "./app/router"
+
 const App = () => {
  
- 
-  return (
-    <>
-      <h1 className="text-white">App</h1>
-    </>
-
-  )
+  return  <Router/>
 }
-
+ 
 export default App
