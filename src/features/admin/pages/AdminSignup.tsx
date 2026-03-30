@@ -1,4 +1,3 @@
-import adminBold from "../../../assets/admin-bold.svg"
 import Button from "../../../components/Button"
 import Input from "../../../components/Input"
 import AdminBackgroundImg from "../components/AdminBackgroundImg"
@@ -10,6 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useNavigate } from "react-router"
 import { useLoadingStore } from "../../../store/useLoadingStore"
+import AdminLogo from "../components/AdminLogo"
 
 const AdminSignup = () => {
  const [inputType, setInputType] = useState<boolean>(false)
@@ -43,7 +43,10 @@ const AdminSignup = () => {
    <div className="absolute w-full h-[100%] lg:left-[300px]"><AdminBackgroundImg /></div>   
       <header className="relative z-10">
 
-<img src={adminBold} alt="Admin" className="lg:w-[200px]"/>
+ <div className="w-[48px] lg:w-[200px]">
+  <AdminLogo/>
+ </div>
+
      <h1 className="text-[24px] font-medium pb-[2px] lg:text-[42px]">ADMIN SIGNUP</h1>
      <p className="text-sm font-light lg:text-[16px]">Create your admin account to get started.</p>
       </header>
@@ -84,7 +87,7 @@ const AdminSignup = () => {
     <Button  btnName="Submit"/>
    </div>
     
-    <p className="text-sm font-light text-center mt-[16px]">Got an account already ?  <span className="font-bold" onClick={()=>navigate("/admin/signin")}>Signin</span></p>
+    <p className="text-sm font-light text-center mt-[16px]">Got an account already ?  <button className="font-bold" onClick={()=>navigate("/admin/signin")}>Signin</button></p>
      </form>
     
     </div>
