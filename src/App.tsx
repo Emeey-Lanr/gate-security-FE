@@ -1,12 +1,14 @@
+import Router from "./app/router"
+import Loading from "./components/Loading"
+import { useLoadingStore } from "./store/useLoadingStore"
+
 const App = () => {
- 
- 
-  return (
-    <>
-      <h1 className="text-white">App</h1>
-    </>
+ const loading = useLoadingStore((state)=>state.loading)
+  return <>
 
-  )
+  <Router/>
+   {loading?.status && <Loading/>}
+  </> 
 }
-
+ 
 export default App
