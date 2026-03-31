@@ -1,4 +1,3 @@
-import adminBold from "../../../assets/admin-bold.svg"
 import Button from "../../../components/Button"
 import Input from "../../../components/Input"
 import AdminBackgroundImg from "../components/AdminBackgroundImg"
