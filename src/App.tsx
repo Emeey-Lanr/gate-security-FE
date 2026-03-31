@@ -1,8 +1,14 @@
 import Router from "./app/router"
+import Loading from "./components/Loading"
+import { useLoadingStore } from "./store/useLoadingStore"
 
 const App = () => {
- 
-  return  <Router/>
+ const loading = useLoadingStore((state)=>state.loading)
+  return <>
+
+  <Router/>
+   {loading?.status && <Loading/>}
+  </> 
 }
  
 export default App

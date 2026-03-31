@@ -2,7 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: space-mono;
+    src: url(../public/fonts/SpaceMono-Regular.ttf);
+}
+
+body{
+        background: #0C0C0C;
+}
 *{
-    background: #0C0C0C;
-    color: white;
+
+    color: rgb(211, 204, 204);
+  font-family: space-mono;
+}
+
+.slide{
+    animation: slide 1s linear infinite ;
+}
+
+@keyframes slide {
+        to{
+ transform: translateX(100vw);
+
+        }
+        from{
+            transform: translateX(-20wv);
+        }   
 }

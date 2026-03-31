@@ -24,7 +24,7 @@ const router = () => {
 
 {/* ADMIN DASHBOARD ROUTES */}
         <Route path="" element={<AdminLayouts/>} >
-            <Route index element={<AdminDashboard/>} />
+            <Route path="dashboard" element={<AdminDashboard/>} />
             <Route path="resident" element={<AdminResident/>}/> 
         </Route>
       </Route>
