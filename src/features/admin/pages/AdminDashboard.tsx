@@ -35,7 +35,7 @@ const AdminDashboard = () => {
            </button>
          </form>
 
-          <div className="">
+          <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-[16px] mt-[16px] ">
              <div className="p-[10px] my-[8px] bg-[#fdfdfd] rounded-[5px]  border border-[#303030]">
               <p className="text-xs text-[#414141]">All Resident</p>
                <p className=""><span className="text-bold text-[34px] font-light text-[#414141]">0</span><span className="text-xs font-light text-[#414141]"> resident</span></p>
@@ -54,10 +54,11 @@ const AdminDashboard = () => {
 
           </div>
 
-          <div className="mt-[24px]">
+<div className="lg:grid lg:grid-cols-[3fr_5fr] gap-[16px]">
+ <div className="mt-[24px]">
              <h2 className="text-sm font-medium">Quick Action</h2>
              <div className="mt-[16px]">
-              <div className="bg-[#1b1b1b] border border-[#4a4a4a]  p-[16px] rounded-md w-full">
+              <div className="bg-[#1b1b1b] border border-[#4a4a4a]  p-[16px] rounded-md w-full hover:transition-all hover:duration-300 hover:bg-[#333] hover:border hover:border-[#ddd]">
                 <img src={Resident} className="block" alt="Verify Residents"/>
                 <p className="font-bold py-[12px]">Verify Residents</p>
                 <p className="text-xs">Click to verify residents</p>
@@ -65,7 +66,7 @@ const AdminDashboard = () => {
              </div>
 
              <div className="mt-[16px]">
-              <div className="bg-[#1b1b1b] border border-[#4a4a4a]  p-[16px] rounded-md w-full">
+              <div className="bg-[#1b1b1b] border border-[#4a4a4a]  p-[16px] rounded-md w-full hover:transition-all hover:duration-300 hover:bg-[#333] hover:border hover:border-[#ddd]">
                 <img src={Key} className="block" alt="Verify Residents"/>
                 <p className="font-bold py-[12px]">Add Security</p>
                 <p className="text-xs">Click to verify residents</p>
@@ -73,14 +74,16 @@ const AdminDashboard = () => {
              </div>
           </div>
 
-          <div className="mt-[24px] mx-auto">
+          <div className="mt-[24px] mx-auto lg:w-full">
             <h1 className="text-sm">Recent Resident Activity</h1>
-            <div className="bg-[#111111] p-[16px] mt-[16px] rounded-md border border-[#4a4a4a]">
+            <div className="bg-[#111111] p-[16px] mt-[16px] rounded-md border border-[#4a4a4a] lg:w-full">
                <div></div>
                <p className="text-center font-bold">No Recent Activity</p>
                <p className="text-center text-xs">You will see recent activity here</p>
             </div>
           </div>
+</div>
+         
        </div>
     </div>
   )
