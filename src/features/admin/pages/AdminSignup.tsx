@@ -10,6 +10,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router"
 import { useLoadingStore } from "../../../store/useLoadingStore"
 import AdminLogo from "../components/AdminLogo"
+import ErrorToast from "../../../components/ErrorToast"
 
 const AdminSignup = () => {
  const [inputType, setInputType] = useState<boolean>(false)
@@ -83,6 +84,7 @@ const AdminSignup = () => {
     {errors.password && <p className="text-red-500 text-xs">{errors.password.message}</p>}
     </div>
 
+
    <div className="mt-[16px]">
     <Button  btnName="Submit"/>
    </div>
@@ -91,7 +93,7 @@ const AdminSignup = () => {
      </form>
     
     </div>
-
+<ErrorToast/>
   </>
    
      

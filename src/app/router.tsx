@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom"
 import AdminSignup from "../features/admin/pages/AdminSignup"
 import AdminLayouts from "../layouts/AdminLayouts"
 import AdminDashboard from "../features/admin/pages/AdminDashboard"
-import AdminResident from "../features/admin/pages/AdminResident"
+import AdminAllResidents from "../features/admin/pages/AdminAllResidents"
 import ResidentSignup from "../features/resident/pages/ResidentSignup"
 import ResidentSignin from "../features/resident/pages/ResidentSignin"
 import ResidentLayouts from "../layouts/ResidentLayouts"
@@ -11,6 +11,7 @@ import AdminSignin from "../features/admin/pages/AdminSignin"
 import ResidentGenerateCode from "../features/resident/pages/ResidentGenerateCode"
 import ResidentAllCodes from "../features/resident/pages/ResidentAllCodes"
 import ResidentViewCode from "../features/resident/pages/ResidentViewCode"
+import AdminResident from "../features/admin/pages/AdminResident"
 const router = () => {
   return (
     <>
@@ -25,7 +26,8 @@ const router = () => {
 {/* ADMIN DASHBOARD ROUTES */}
         <Route path="" element={<AdminLayouts/>} >
             <Route path="dashboard" element={<AdminDashboard/>} />
-            <Route path="resident" element={<AdminResident/>}/> 
+            <Route path="residents" element={<AdminAllResidents/>}/> 
+             <Route path="residents/:id" element={<AdminResident/>}/> 
         </Route>
       </Route>
        
