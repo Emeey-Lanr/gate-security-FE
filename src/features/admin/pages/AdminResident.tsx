@@ -21,12 +21,15 @@ const AdminResident = () => {
 
   return (
     <div className="w-[90%] mx-auto">
+      {/* HEADER */}
       <div>
         <h1 className="text-[24px] font-bold">ADMIN RESIDENTS</h1>
 
         <p className="text-xs">
           View and manage resident information, including verification status.
         </p>
+
+        {/* BREADCRUMBS */}
         <div className="flex items-center gap-[8px] mt-[16px]">
           <Link to="/admin/dashboard" className="text-xs">
             Dashboard
@@ -63,6 +66,7 @@ const AdminResident = () => {
         </form>
       </div>
 
+      {/* RESIDENT DETAILS */}
       <div className="lg:w-[70%] lg:mx-auto">
         <div className="bg-[#2c2c2c] h-[200px] p-[16px] rounded-md mb-[12px] lg:w-[200px]"></div>
         <div className="flex items-center gap-1">
@@ -106,6 +110,7 @@ const AdminResident = () => {
           </div>
         </div>
 
+        {/* ACTION BUTTONS */}
         <div className="my-[12px]">
           <button className="w-full h-[40px] text-sm text-gray-900 border border-[#444] bg-white mb-[12px]">
             Verify
