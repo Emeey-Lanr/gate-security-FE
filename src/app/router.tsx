@@ -12,6 +12,10 @@ import ResidentGenerateCode from "../features/resident/pages/ResidentGenerateCod
 import ResidentAllCodes from "../features/resident/pages/ResidentAllCodes"
 import ResidentViewCode from "../features/resident/pages/ResidentViewCode"
 import AdminResident from "../features/admin/pages/AdminResident"
+import AdminSecurity from "../features/admin/pages/AdminSecurity"
+import AdminLogs from "../features/admin/pages/AdminLogs"
+import AdminAlerts from "../features/admin/pages/AdminAlerts"
+
 const router = () => {
   return (
     <>
@@ -28,6 +32,9 @@ const router = () => {
             <Route path="dashboard" element={<AdminDashboard/>} />
             <Route path="residents" element={<AdminAllResidents/>}/> 
              <Route path="residents/:id" element={<AdminResident/>}/> 
+              <Route path="security" element={<AdminSecurity/>}/> 
+              <Route path="alerts" element={<AdminAlerts/>}/>
+               <Route path="logs" element={<AdminLogs/>}/> 
         </Route>
       </Route>
        
