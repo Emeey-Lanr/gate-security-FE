@@ -6,10 +6,12 @@ import SearchIcon from "../../../assets/search.svg";
 import Resident from "../../../assets/resident.svg";
 import Key from "../../../assets/key.svg";
 
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useAddSecurityModalStore } from "../../../store/Admin/useAddSecurityStore";
 
 const AdminDashboard = () => {
-  const navigate = useNavigate();
+
+  const toggleSecurityModal = useAddSecurityModalStore((state)=>state.setSecurityModal)
   const schema = z.object({
     search: z.string().min(1, ""),
   });
@@ -93,22 +95,24 @@ const AdminDashboard = () => {
         <h2 className="text-sm font-medium">Quick Actions</h2>
 
         {/* Verify Residents */}
-        <div className="mt-[16px] bg-[#1b1b1b] border border-[#4a4a4a] p-[16px] rounded-md hover:bg-[#333] cursor-pointer">
+        <Link to={"/admin/residents"}>
+        <div   className="mt-[16px] bg-[#1b1b1b] border border-[#4a4a4a] p-[16px] rounded-md hover:bg-[#333] cursor-pointer">
           <img src={Resident} alt="" />
           <p className="font-bold py-[12px]">Verify Residents</p>
           <p className="text-xs">Approve or reject residents</p>
         </div>
-
+</Link>
         {/* Add Security */}
-        <div className="mt-[16px] bg-[#1b1b1b] border border-[#4a4a4a] p-[16px] rounded-md hover:bg-[#333] cursor-pointer">
+        <div onClick={()=>toggleSecurityModal({isOpen:true})} className="mt-[16px] bg-[#1b1b1b] border border-[#4a4a4a] p-[16px] rounded-md hover:bg-[#333] cursor-pointer">
           <img src={Key} alt="" />
           <p className="font-bold py-[12px]">Add Security</p>
           <p className="text-xs">Register security personnel</p>
         </div>
 
         {/* Alerts Shortcut */}
-        <div
-          onClick={() => navigate("/alerts")}
+        <Link to={"/admin/alerts"}> 
+         <div
+          
           className="mt-[16px] relative bg-[#1b1b1b] border border-[#4a4a4a] p-[16px] rounded-md hover:bg-[#333] cursor-pointer"
         >
           <span className="absolute top-[10px] right-[10px] bg-red-500 text-white text-[10px] px-2 py-1 rounded-full">
@@ -118,6 +122,8 @@ const AdminDashboard = () => {
           <p className="font-bold py-[12px]">Security Alerts</p>
           <p className="text-xs">View active incidents</p>
         </div>
+        </Link>
+       
       </div>
 
       {/* AI SUMMARY */}
