@@ -2,8 +2,11 @@ import Input from "../../../components/Input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useAddSecurityModalStore } from "../../../store/Admin/useAddSecurityStore";
 
 const AddSecurity = () => {
+   const toggleSecurityModal = useAddSecurityModalStore((state)=>state.setSecurityModal)
+  
   const schema = z.object({
     firstName: z.string().min(1, "First name is required"),
     lastName: z.string().min(1, "Last name is required"),
@@ -24,7 +27,7 @@ const AddSecurity = () => {
         <div className="mb-[12px]">
           <h1 className="text-sm font-bold mb-[8px] w-full flex justify-between">
             Add Security{" "}
-            <button onClick={()=>alert(20)}>
+            <button onClick={()=>toggleSecurityModal({isOpen:false})} >
               <svg
                 width="24"
                 height="24"
