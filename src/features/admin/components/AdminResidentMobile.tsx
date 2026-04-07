@@ -57,7 +57,7 @@ const AdminResidentMobile = () => {
           </div>
         </div>
       </div>
-      <ErrorModal message="Failed to approve resident. Please try again." />
+      {/* <ErrorModal message="Failed to approve resident. Please try again." /> */}
       {/* <DeleteModal/> */}
       {/* <SuccessModal message="Resident approved successfully"/> */}
     </>
