@@ -3,7 +3,7 @@ import Approve from "../../../assets/approve.svg";
 import Delete from "../../../assets/delete.svg";
 // import DeleteModal from "../../../components/DeleteModal";
 // import SuccessModal from "../../../components/SuccessModal";
-import ErrorModal from "../../../components/ErrorModal";
+// import ErrorModal from "../../../components/ErrorModal";
 
 const AdminResidentMobile = () => {
   return (

@@ -39,8 +39,8 @@ const AdminAllResidents = () => {
             alt="Back"
             className="w-[14px] transform rotate-180"
           />
-          <Link to="/admin/resident" className="font-bold text-xs">
-            Resident
+          <Link to={"/admin/residents"}  className="font-bold text-xs">
+            Residents
           </Link>
         </div>
       </div>
