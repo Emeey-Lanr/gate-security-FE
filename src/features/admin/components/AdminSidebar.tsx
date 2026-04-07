@@ -7,7 +7,7 @@ import Settings from "../../../assets/setting.svg";
 import Logout from "../../../assets/logout.svg";
 import Exit from "../../../assets/exit.svg";
 import Alert from "../../../assets/alert.svg";
-import { useAdminSidebarStore } from "../../../store/useAdminSidebarStore";
+import { useAdminSidebarStore } from "../../../store/Admin/useAdminSidebarStore";
 import { Link } from "react-router";
 
 const AdminSidebar = () => {
@@ -40,8 +40,9 @@ const AdminSidebar = () => {
           </div>
           <div className="grid grid-cols-2 justify-center items-center gap-[32px]">
             {sideBarItems.map((item, index) => (
-
-              <Link onClick={()=>toggleSidebar({isOpen: false})} to={item.url}
+              <Link
+                onClick={() => toggleSidebar({ isOpen: false })}
+                to={item.url}
                 key={index}
                 className="flex flex-col  items-center hover:transition-all hover:bg-[#333] hover:border hover:border-[#444] hover:p-[16px]"
               >
