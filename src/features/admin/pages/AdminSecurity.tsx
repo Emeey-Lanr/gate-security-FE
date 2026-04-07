@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import SearchIcon from "../../../assets/search.svg";
 import Key from "../../../assets/key.svg";
-import AddSecurity from "../components/AddSecurity";
+// import AddSecurity from "../components/AddSecurity";
 const AdminSecurity = () => {
   const schema = z.object({
     search: z.string().min(1, ""),
