@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useForm, Watch } from "react-hook-form";
 import Input from "../../../components/Input";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -13,7 +13,7 @@ const AdminAllResidents = () => {
   });
 
   type SearchData = z.infer<typeof schema>;
-  const { handleSubmit, register } = useForm<SearchData>({
+  const { handleSubmit, register, watch } = useForm<SearchData>({
     resolver: zodResolver(schema),
   });
 
@@ -47,7 +47,7 @@ const AdminAllResidents = () => {
 
       <div className="py-[16px] mx-auto">
         <form className="relative" onSubmit={handleSubmit(onSubmit)} action="">
-          <Input value={""} register={register} type="text" name="search" />
+          <Input value={watch("search")} register={register} type="text" name="search" />
           <button className="absolute bg-[#1B1B1B] top-[10px] right-[10px]">
             <img src={SearchIcon} alt="Search" />
           </button>

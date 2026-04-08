@@ -11,7 +11,7 @@ const AdminResident = () => {
   });
 
   type SearchData = z.infer<typeof schema>;
-  const { handleSubmit, register } = useForm<SearchData>({
+  const { handleSubmit, register, watch } = useForm<SearchData>({
     resolver: zodResolver(schema),
   });
 
@@ -59,7 +59,7 @@ const AdminResident = () => {
 
       <div className="py-[16px] mx-auto">
         <form className="relative" onSubmit={handleSubmit(onSubmit)} action="">
-          <Input value={""} register={register} type="text" name="search" />
+          <Input value={watch("search")} register={register} type="text" name="search" />
           <button className="absolute bg-[#1B1B1B] top-[10px] right-[10px]">
             <img src={SearchIcon} alt="Search" />
           </button>

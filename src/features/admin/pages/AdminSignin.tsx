@@ -37,6 +37,7 @@ const AdminSignin = () => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -77,7 +78,7 @@ const AdminSignin = () => {
             <label htmlFor="" className="text-sm  block pb-[4px]">
               Admin Email
             </label>
-            <Input value={""} type="text" register={register} name="email" />
+            <Input value={watch("email")||""} type="text" register={register} name="email" />
             {errors.email && (
               <p className="text-red-500 text-xs">{errors.email.message}</p>
             )}
@@ -87,7 +88,7 @@ const AdminSignin = () => {
             <label htmlFor="" className="text-sm  block pb-[4px]">
               Admin Password
             </label>
-            <Input  value={""}
+            <Input  value={watch("password")|| ""}
               type={inputType ? "text" : "password"}
               register={register}
               name="password"
