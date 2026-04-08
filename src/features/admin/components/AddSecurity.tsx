@@ -2,10 +2,10 @@ import Input from "../../../components/Input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { useAddSecurityModalStore } from "../../../store/Admin/useAdminModals";
+import { useAdminModalStore} from "../../../store/Admin/useAdminModals";
 
 const AddSecurity = () => {
-  const toggleSecurityModal = useAddSecurityModalStore(
+  const toggleSecurityModal = useAdminModalStore(
     (state) => state.setSecurityModal,
   );
 

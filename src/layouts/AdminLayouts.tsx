@@ -2,10 +2,10 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "../features/admin/components/AdminSidebar";
 import AdminHeader from "../features/admin/components/AdminHeader";
 import AddSecurity from "../features/admin/components/AddSecurity";
-import { useAddSecurityModalStore } from "../store/Admin/useAdminModals";
+import { useAdminModalStore } from "../store/Admin/useAdminModals";
 
 const AdminLayouts = () => {
-  const securityModal = useAddSecurityModalStore(
+  const securityModal = useAdminModalStore(
     (state) => state.securityModal,
   );
   return (

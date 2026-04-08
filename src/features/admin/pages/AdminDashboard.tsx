@@ -7,10 +7,10 @@ import Resident from "../../../assets/resident.svg";
 import Key from "../../../assets/key.svg";
 
 import { Link } from "react-router-dom";
-import { useAddSecurityModalStore } from "../../../store/Admin/useAdminModals";
+import { useAdminModalStore } from "../../../store/Admin/useAdminModals";
 
 const AdminDashboard = () => {
-  const toggleSecurityModal = useAddSecurityModalStore(
+  const toggleSecurityModal = useAdminModalStore(
     (state) => state.setSecurityModal,
   );
   const schema = z.object({
@@ -48,7 +48,7 @@ const AdminDashboard = () => {
 
       {/* STATS */}
       <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-[16px]">
-        <div className="p-[10px] bg-[#fdfdfd] rounded-[5px] border border-[#303030]">
+        <div className="p-[10px] bg-[#fdfdfd] rounded-[5px] border border-[#303030] mb-[12px]">
           <p className="text-xs text-[#414141]">All Resident</p>
           <p>
             <span className="text-[34px] font-light text-[#414141]">0</span>
@@ -56,7 +56,7 @@ const AdminDashboard = () => {
           </p>
         </div>
 
-        <div className="p-[10px] bg-[#b0f0aa31] rounded-[5px] border border-[#b0f0aa]">
+        <div className="p-[10px] bg-[#b0f0aa31] rounded-[5px] border border-[#b0f0aa] mb-[12px]">
           <p className="text-xs">VERIFIED RESIDENT</p>
           <p>
             <span className="text-[34px] font-light text-[#5bfd4c]">0</span>
@@ -64,7 +64,7 @@ const AdminDashboard = () => {
           </p>
         </div>
 
-        <div className="p-[10px] bg-[#ffbbbb3d] rounded-[5px] border border-[#f0aaaa]">
+        <div className="p-[10px] bg-[#ffbbbb3d] rounded-[5px] border border-[#f0aaaa] mb-[12px]">
           <p className="text-xs">PENDING VERIFICATION</p>
           <p>
             <span className="text-[34px] font-light text-[#ff5757]">0</span>
@@ -73,7 +73,7 @@ const AdminDashboard = () => {
         </div>
 
         {/*ALERT COUNT (NEW - IMPORTANT) */}
-        <div className="p-[10px] bg-[#1b1b1b] rounded-[5px] border border-[#4a4a4a]">
+        <div className="p-[10px] bg-[#1b1b1b] rounded-[5px] border border-[#4a4a4a] mb-[12px]">
           <p className="text-xs">ACTIVE ALERTS</p>
           <p>
             <span className="text-[34px] font-light text-red-500">3</span>
