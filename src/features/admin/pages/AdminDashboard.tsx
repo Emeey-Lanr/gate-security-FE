@@ -52,7 +52,7 @@ const AdminDashboard = () => {
           <p className="text-xs text-[#414141]">All Resident</p>
           <p>
             <span className="text-[34px] font-light text-[#414141]">0</span>
-            <span className="text-xs"> resident</span>
+            <span className="text-xs text-gray-800"> resident</span>
           </p>
         </div>
 
