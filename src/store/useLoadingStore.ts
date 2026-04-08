@@ -1,17 +1,14 @@
 import {create} from "zustand"
 
-type Loading = {
-    status:boolean
-}
 
 
 type LoadingStore = {
-    loading: Loading | null
-    setLoading:(loading:Loading)=>void
+    loading: boolean | null
+    setLoading:(state:boolean)=>void
 }
 
 
 export const useLoadingStore = create<LoadingStore>((set)=>({
-  loading:{status:false},
+  loading:false,
   setLoading:(loading)=>set({loading})
 }))

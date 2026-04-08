@@ -43,7 +43,7 @@ const AdminSignin = () => {
   });
 
   const onSubmit = (data: FormData) => {
-    setLoading({ status: true });
+    setLoading(true);
     console.log(data);
   };
 

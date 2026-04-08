@@ -6,8 +6,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import SearchIcon from "../../../assets/search.svg";
 import Key from "../../../assets/key.svg";
+import { useLoadingStore } from "../../../store/useLoadingStore";
 
 const AdminSecurity = () => {
+    const setLoading = useLoadingStore((state) => state.setLoading);
+  
   const schema = z.object({
     search: z.string().min(1, ""),
   });
@@ -18,6 +21,7 @@ const AdminSecurity = () => {
   });
 
   const onSubmit = (data: SearchData) => {
+    setLoading(true)
     console.log(data);
   };
 
