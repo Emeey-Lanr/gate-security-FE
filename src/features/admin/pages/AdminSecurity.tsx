@@ -6,8 +6,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import SearchIcon from "../../../assets/search.svg";
 import Key from "../../../assets/key.svg";
+import { useLoadingStore } from "../../../store/useLoadingStore";
+import { useAdminModalStore } from "../../../store/Admin/useAdminModals";
 
 const AdminSecurity = () => {
+    const toggleSecurityModal = useAdminModalStore(
+      (state) => state.setSecurityModal,
+    );
+    const setLoading = useLoadingStore((state) => state.setLoading);
+  
   const schema = z.object({
     search: z.string().min(1, ""),
   });
@@ -18,6 +25,7 @@ const AdminSecurity = () => {
   });
 
   const onSubmit = (data: SearchData) => {
+    setLoading(true)
     console.log(data);
   };
 
@@ -50,13 +58,13 @@ const AdminSecurity = () => {
             onSubmit={handleSubmit(onSubmit)}
             action=""
           >
-            <Input register={register} type="text" name="search" />
+            <Input value={""} register={register} type="text" name="search" />
             <button className="absolute bg-[#1B1B1B] top-[10px] right-[10px]">
               <img src={SearchIcon} alt="Search" />
             </button>
           </form>
         </div>
-        <div className="mt-[16px] md:w-[400px] mb-[16px]">
+        <div onClick={()=>toggleSecurityModal(true)} className="mt-[16px] md:w-[400px] mb-[16px]">
           <div className="bg-[#1b1b1b] border border-[#4a4a4a]  p-[16px] rounded-md w-full hover:transition-all hover:duration-300 hover:bg-[#333] hover:border hover:border-[#ddd]">
             <img src={Key} className="block w-[24px]" alt="Verify Residents" />
             <p className="font-bold py-[12px] text-sm">Add Security</p>

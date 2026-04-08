@@ -47,7 +47,7 @@ const AdminAllResidents = () => {
 
       <div className="py-[16px] mx-auto">
         <form className="relative" onSubmit={handleSubmit(onSubmit)} action="">
-          <Input register={register} type="text" name="search" />
+          <Input value={""} register={register} type="text" name="search" />
           <button className="absolute bg-[#1B1B1B] top-[10px] right-[10px]">
             <img src={SearchIcon} alt="Search" />
           </button>

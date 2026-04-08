@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import BackArrow from "../../../assets/back-arrow.svg";
 import AlertModal from "../components/AlertModal";
+import { useAdminModalStore } from "../../../store/Admin/useAdminModals";
 const AdminAlerts = () => {
+  const alertModal = useAdminModalStore((state)=>state.alertModal)
+  const toggleAlertModal = useAdminModalStore((state)=>state.setAlertModal)
   return (
     <>
       <div className="w-[90%] mx-auto mt-[16px]">
@@ -28,7 +31,7 @@ const AdminAlerts = () => {
           </div>
         </div>
 
-        <div className="mt-[18px]">
+        <div onClick={()=>toggleAlertModal(true)} className="mt-[18px]">
           <div className="mb-[18px] bg-[#1b1b1b] border border-[#4a4a4a]  p-[16px] rounded-md w-full hover:transition-all hover:duration-300 hover:bg-[#333] hover:border hover:border-[#ddd]">
             <div>
               <p className="font-bold text-sm">Unauthorized Access Attempt</p>
@@ -43,7 +46,7 @@ const AdminAlerts = () => {
           </div>
         </div>
       </div>
-      <AlertModal />
+      {alertModal && <AlertModal />}
     </>
   );
 };
