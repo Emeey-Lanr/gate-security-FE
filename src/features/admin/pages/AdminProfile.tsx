@@ -20,7 +20,7 @@ const AdminProfile = () => {
   };
   return (
     <div className="w-[90%] mx-auto">
-  <h1 className="text-[24px] font-bold">Admin Profile</h1>
+  <h1 className="text-[24px] font-bold uppercase">Profile</h1>
   <p className="text-xs">Manage your personal account details</p>
    <div className="flex items-center gap-[8px] mt-[16px]">
           <Link to="/admin/dashboard" className="text-xs">
@@ -31,16 +31,16 @@ const AdminProfile = () => {
             alt="Back"
             className="w-[14px] transform rotate-180"
           />
-          <Link to="/admin/residents" className="text-xs">
-            Residents
+          <Link to="/admin/settings" className="text-xs">
+            Settings
           </Link>
           <img
             src={BackArrow}
             alt="Back"
             className="w-[14px] transform rotate-180"
           />
-          <Link to="/admin/resident" className="font-bold text-xs">
-            Resident
+          <Link to="/admin/settings/profile" className="font-bold text-xs">
+            Profile
           </Link>
         </div>
 

@@ -15,8 +15,11 @@ import AdminResident from "../features/admin/pages/AdminResident"
 import AdminSecurity from "../features/admin/pages/AdminSecurity"
 import AdminLogs from "../features/admin/pages/AdminLogs"
 import AdminAlerts from "../features/admin/pages/AdminAlerts"
-import AdminSetting from "../features/admin/pages/AdminSetting"
+import AdminSetting from "../features/admin/pages/AdminSettings"
 import AdminProfile from "../features/admin/pages/AdminProfile"
+import AdminSystemPreferences from "../features/admin/pages/AdminSystemPreferences"
+import AdminEstateConfig from "../features/admin/pages/AdminEstateConfig"
+import AdminNotifications from "../features/admin/pages/AdminNotifications"
 
 const router = () => {
   return (
@@ -39,6 +42,9 @@ const router = () => {
                <Route path="logs" element={<AdminLogs/>}/>
                <Route path="settings" element={<AdminSetting/>}/>
                <Route path="settings/profile" element={<AdminProfile/>}/>
+               <Route path="settings/prefrences" element={<AdminSystemPreferences/>}/>
+               <Route path="settings/estate/config" element={<AdminEstateConfig/>}/>
+                <Route path="settings/notifications" element={<AdminNotifications/>}/>
         </Route>
       </Route>
        

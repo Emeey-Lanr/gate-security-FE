@@ -37,36 +37,9 @@ const AdminSetting = () => {
         Update your account information
       </p>
 
-      <button className="mt-[12px] text-xs text-blue-400">
+      <Link  to={"/admin/settings/profile"}  className="mt-[12px] text-xs text-blue-400">
         Edit Profile →
-      </button>
-    </div>
-
-    {/* SECURITY PERSONNEL */}
-    <div className="bg-[#111] border border-[#333] p-[16px] rounded-md">
-      <h2 className="text-sm font-bold">Security Personnel</h2>
-      <p className="text-xs text-[#aaa] mt-[4px]">
-        Manage guards and access roles
-      </p>
-
-      <button
-        
-        className="mt-[12px] text-xs text-blue-400"
-      >
-        Add / Manage →
-      </button>
-    </div>
-
-    {/* ALERT SETTINGS */}
-    <div className="bg-[#111] border border-[#333] p-[16px] rounded-md">
-      <h2 className="text-sm font-bold">Alert Settings</h2>
-      <p className="text-xs text-[#aaa] mt-[4px]">
-        Configure how alerts are triggered
-      </p>
-
-      <button className="mt-[12px] text-xs text-blue-400">
-        Configure →
-      </button>
+      </Link>
     </div>
 
     {/* NOTIFICATIONS */}
@@ -76,9 +49,9 @@ const AdminSetting = () => {
         Control SMS, email, or push alerts
       </p>
 
-      <button className="mt-[12px] text-xs text-blue-400">
+      <Link  to={"/admin/settings/notifications"} className="mt-[12px] text-xs text-blue-400">
         Manage →
-      </button>
+      </Link>
     </div>
 
     {/* ESTATE SETTINGS */}
@@ -88,9 +61,9 @@ const AdminSetting = () => {
         Gate names, zones, and structure
       </p>
 
-      <button className="mt-[12px] text-xs text-blue-400">
+      <Link  to={"/admin/settings/estate/config"} className="mt-[12px] text-xs text-blue-400">
         Edit →
-      </button>
+      </Link>
     </div>
 
     {/* SYSTEM PREFERENCES */}
@@ -100,9 +73,9 @@ const AdminSetting = () => {
         Dark mode, UI behavior, defaults
       </p>
 
-      <button className="mt-[12px] text-xs text-blue-400">
+      <Link to={"/admin/settings/prefrences"}  className="mt-[12px] text-xs text-blue-400">
         Customize →
-      </button>
+      </Link>
     </div>
   </div>
 </div>
