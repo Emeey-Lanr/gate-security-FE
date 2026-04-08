@@ -11,7 +11,7 @@ import { useAdminSidebarStore } from "../../../store/Admin/useAdminSidebarStore"
 import { Link } from "react-router";
 
 const AdminSidebar = () => {
-  const open = useAdminSidebarStore((state) => state.sidebar?.isOpen);
+  const open = useAdminSidebarStore((state) => state.sidebar);
   const toggleSidebar = useAdminSidebarStore((state) => state.setSidebar);
 
   const sideBarItems = [
@@ -31,7 +31,7 @@ const AdminSidebar = () => {
       >
         <div>
           <div className="absolute top-0 right-0 m-[16px]">
-            <button onClick={() => toggleSidebar({ isOpen: false })}>
+            <button onClick={() => toggleSidebar(false)}>
               <img src={Exit} className="w-[24px]" alt="Exit" />
             </button>
           </div>
@@ -41,7 +41,7 @@ const AdminSidebar = () => {
           <div className="grid grid-cols-2 justify-center items-center gap-[32px]">
             {sideBarItems.map((item, index) => (
               <Link
-                onClick={() => toggleSidebar({ isOpen: false })}
+                onClick={() => toggleSidebar(false)}
                 to={item.url}
                 key={index}
                 className="flex flex-col  items-center hover:transition-all hover:bg-[#333] hover:border hover:border-[#444] hover:p-[16px]"

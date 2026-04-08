@@ -77,7 +77,7 @@ const AdminSignin = () => {
             <label htmlFor="" className="text-sm  block pb-[4px]">
               Admin Email
             </label>
-            <Input type="text" register={register} name="email" />
+            <Input value={""} type="text" register={register} name="email" />
             {errors.email && (
               <p className="text-red-500 text-xs">{errors.email.message}</p>
             )}
@@ -87,7 +87,7 @@ const AdminSignin = () => {
             <label htmlFor="" className="text-sm  block pb-[4px]">
               Admin Password
             </label>
-            <Input
+            <Input  value={""}
               type={inputType ? "text" : "password"}
               register={register}
               name="password"

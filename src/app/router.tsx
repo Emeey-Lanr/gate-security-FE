@@ -15,6 +15,8 @@ import AdminResident from "../features/admin/pages/AdminResident"
 import AdminSecurity from "../features/admin/pages/AdminSecurity"
 import AdminLogs from "../features/admin/pages/AdminLogs"
 import AdminAlerts from "../features/admin/pages/AdminAlerts"
+import AdminSetting from "../features/admin/pages/AdminSetting"
+import AdminProfile from "../features/admin/pages/AdminProfile"
 
 const router = () => {
   return (
@@ -34,7 +36,9 @@ const router = () => {
              <Route path="residents/:id" element={<AdminResident/>}/> 
               <Route path="security" element={<AdminSecurity/>}/> 
               <Route path="alerts" element={<AdminAlerts/>}/>
-               <Route path="logs" element={<AdminLogs/>}/> 
+               <Route path="logs" element={<AdminLogs/>}/>
+               <Route path="settings" element={<AdminSetting/>}/>
+               <Route path="settings/profile" element={<AdminProfile/>}/>
         </Route>
       </Route>
        
