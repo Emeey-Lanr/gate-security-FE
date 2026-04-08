@@ -12,8 +12,7 @@ const AddSecurity = () => {
   const schema = z.object({
     firstName: z.string().min(1, "First name is required"),
     lastName: z.string().min(1, "Last name is required"),
-    phoneNumber: z
-      .string()
+    phoneNumber: z.number()
       .min(11, "Invalid phone number")
       .max(11, "Invalid phone number"),
   });
@@ -22,6 +21,7 @@ const AddSecurity = () => {
   const {
     handleSubmit,
     register,
+    watch,
     formState: { errors },
   } = useForm<SearchData>({
     resolver: zodResolver(schema),
@@ -29,7 +29,7 @@ const AddSecurity = () => {
 
   const onSubmit = (data: SearchData) => {
     console.log(data);
-    
+
   };
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10">
@@ -62,7 +62,7 @@ const AddSecurity = () => {
             <label htmlFor="email" className="text-xs">
               First Name
             </label>
-            <Input value={""} register={register} type="text" name="firstName" />
+            <Input value={watch("firstName") || ""} register={register} type="text" name="firstName" />
             {errors.firstName && (
               <p className="text-red-500 text-xs">{errors.firstName.message}</p>
             )}
@@ -71,7 +71,7 @@ const AddSecurity = () => {
             <label htmlFor="email" className="text-xs">
               Last Name
             </label>
-            <Input value={""} register={register} type="text" name="lastName" />
+            <Input value={watch("lastName") || ""} register={register} type="text" name="lastName" />
             {errors.lastName && (
               <p className="text-red-500 text-xs">{errors.lastName.message}</p>
             )}
@@ -80,7 +80,7 @@ const AddSecurity = () => {
             <label htmlFor="email" className="text-xs">
               Phone Number
             </label>
-            <Input value={""} register={register} type="number" name="phoneNumber" />
+            <Input value={watch("phoneNumber")} register={register} type="number" name="phoneNumber" />
             {errors.phoneNumber && (
               <p className="text-red-500 text-xs">
                 {errors.phoneNumber.message}
