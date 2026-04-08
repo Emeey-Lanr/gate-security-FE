@@ -3,7 +3,7 @@ import Input from "../../../components/Input"
 import AdminBackgroundImg from "../components/AdminBackgroundImg"
 import EyesOn from "../../../assets/eyes-on.svg"
 import EyesOff from "../../../assets/eyes-off.svg"
-import { useForm } from "react-hook-form";
+import { useForm,} from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
@@ -27,13 +27,13 @@ const AdminSignup = () => {
  })
 
  type FormData = z.infer<typeof schema>
- const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+ const { register, handleSubmit, watch, formState: { errors } } = useForm<FormData>({
   resolver: zodResolver(schema)
  });
 
 
  const onSubmit = (data: FormData) => {
-  setLoading({status:true})
+  setLoading(true)
   console.log(data)
  }
   return (
@@ -56,30 +56,30 @@ const AdminSignup = () => {
   
   <div className="mb-[8px]">
     <label htmlFor="" className="text-sm  block pb-[4px]" >Admin Name</label>
-    <Input type="text" register={register} name="name"/>
+    <Input value={watch("name") || ""}  type="text" register={register} name="name"/>
     {errors.name && <p className="text-red-500 text-xs">{errors.name.message}</p>}
     </div>
   <div className="mb-[8px]">
     <label htmlFor="" className="text-sm  block pb-[4px]" >Admin Email</label>
-    <Input type="text" register={register} name="email"/>
+    <Input value={watch("email") || ""}  type="text" register={register} name="email"/>
     {errors.email && <p className="text-red-500 text-xs">{errors.email.message}</p>}
     </div>
 
   <div className="mb-[8px]">
     <label htmlFor="" className="text-sm  block pb-[4px]" >Estate Name</label>
-    <Input type="text" register={register} name="estateName"/>
+    <Input value={watch("estateName") || ""} type="text" register={register} name="estateName"/>
     {errors.estateName && <p className="text-red-500 text-xs">{errors.estateName.message}</p>}
     </div>
 
   <div className="mb-[8px]">
     <label htmlFor="" className="text-sm  block pb-[4px]" >Estate Address</label>
-    <Input type="text" register={register} name="estateAddress"/>
+    <Input value={watch("estateAddress") || ""}  type="text" register={register} name="estateAddress"/>
     {errors.estateAddress && <p className="text-red-500 text-xs">{errors.estateAddress.message}</p>}
     </div>
 
   <div className="mb-[8px] relative">
     <label htmlFor="" className="text-sm  block pb-[4px]" >Admin Password</label>
-    <Input type={inputType ? "text" : "password"} register={register} name="password"/>
+    <Input value={watch("password") || ""}  type={inputType ? "text" : "password"} register={register} name="password"/>
      <button className="absolute right-[16px] top-[32px]" onClick={()=>setInputType(!inputType)}>{inputType ?  <img src={EyesOn} alt="Hide Password"/> : <img src={EyesOff} alt="Show Password"/> }</button>
     {errors.password && <p className="text-red-500 text-xs">{errors.password.message}</p>}
     </div>

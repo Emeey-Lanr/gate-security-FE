@@ -1,15 +1,20 @@
 import { create } from "zustand";
 
-type AdminSidebar = {
-    isOpen:boolean
-}
+
 
 type AdminSidebarStore = {
-    sidebar: AdminSidebar | null
-    setSidebar:(sidebar:AdminSidebar)=>void
+    sidebar: boolean | null
+    setSidebar:(sidebar:boolean)=>void
 }
 
 export const useAdminSidebarStore = create<AdminSidebarStore>((set)=>({
-  sidebar:{isOpen:false},
-  setSidebar:(sidebar)=>set({sidebar})
+  sidebar:false,
+  setSidebar:(state:boolean)=>set({
+    sidebar:state
+  })
+
 }))
+
+
+//setSideBar is a function that takes sidebar as a parameter
+//  is the parameter that is passed to change the  value
