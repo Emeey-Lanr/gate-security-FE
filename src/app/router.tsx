@@ -20,6 +20,7 @@ import AdminProfile from "../features/admin/pages/AdminProfile"
 import AdminSystemPreferences from "../features/admin/pages/AdminSystemPreferences"
 import AdminEstateConfig from "../features/admin/pages/AdminEstateConfig"
 import AdminNotifications from "../features/admin/pages/AdminNotifications"
+import ResidentSignupPending from "../features/resident/pages/ResidentSignupPending"
 
 const router = () => {
   return (
@@ -55,7 +56,7 @@ const router = () => {
       {/* RESIDENT SIGNUP AND SIGNIN ROUTES */}
        <Route path="signup" element={<ResidentSignup/>}/>
        <Route path="signin" element={<ResidentSignin/>}/>
-
+       <Route path="verification/pending" element={<ResidentSignupPending/>}/>
 {/* RESIDENT DASHBOARD ROUTES */}
         <Route path="" element={<ResidentLayouts/>}>
             <Route index element={<ResidentDashboard/>}/>
