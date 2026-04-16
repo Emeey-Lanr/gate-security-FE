@@ -21,6 +21,8 @@ import AdminSystemPreferences from "../features/admin/pages/AdminSystemPreferenc
 import AdminEstateConfig from "../features/admin/pages/AdminEstateConfig";
 import AdminNotifications from "../features/admin/pages/AdminNotifications";
 import ResidentSignupPending from "../features/resident/pages/ResidentSignupPending";
+import ResidentSetting from "../features/resident/pages/ResidentSetting";
+import ResidentProfile from "../features/resident/pages/ResidentProfile";
 
 const router = () => {
   return (
@@ -71,9 +73,10 @@ const router = () => {
           {/* RESIDENT DASHBOARD ROUTES */}
           <Route path="" element={<ResidentLayouts />}>
             <Route path="dashboard" element={<ResidentDashboard />} />
-            <Route path="generate" element={<ResidentGenerateCode />} />
-            <Route path="all" element={<ResidentAllCodes />} />
-            <Route path="code" element={<ResidentViewCode />} />
+            <Route path="codes/generate" element={<ResidentGenerateCode />} />
+            <Route path="codes" element={<ResidentAllCodes />} />
+             <Route path="settings" element={<ResidentSetting/>} />
+            <Route path="profile" element={<ResidentProfile/>} />
           </Route>
         </Route>
       </Routes>
